@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset=UTF-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>baselined 0.beta</title>
+
+        <!-- <link href="//fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        
+        <link href="style/sheet.css" rel="stylesheet">
+        <link href="style/letters.css" rel="stylesheet"> -->
+
+		<style></style>
+	</head>
+	<body>
+	    <div id="main" role="main">
+	        <header></header>
+	        <div>
+	            <section id="create">
+
+	            </section>
+	        </div>
+	        <footer></footer>
+	    </div>
+
+    	<script src="data/nines.js"></script>
+
+    	<script>
+        var ss = [];
+        var ies = [];
+        var s = [];
+        var other = [];
+        var esses;
+        var current;
+
+        for (esses in nines) {
+          current = nines[esses];
+          
+          // if (esses == 0) {
+          //    console.log(current.substr(-3))
+          //  }
+
+          if (current.substr(-3) === "IES") {
+            ies.push(current);
+          }
+          else if (current.substr(-2) === "SS") {
+            ss.push(current);
+          }
+          else if (current.substr(-1) === "S") {
+            s.push(current);
+          }
+          else {
+            other.push(current)
+          }
+        }
+
+        console.log(ies)
+
+    	</script>
+	</body>
+</html>
