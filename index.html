@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>baselined 0.beta</title>
+
+    <link href="//fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    
+    <link href="style/sheet.css" rel="stylesheet">
+    <link href="style/letters.css" rel="stylesheet">
+
+		<style></style>
+	</head>
+	<body>
+	  <div id="main" role="main">
+	    <header></header>
+	    <div>
+
+	      <section id="create">
+    	    <header>
+
+    	    </header>
+          <div>
+    	      <ol id="solution">
+      	      <li><span class="letter-g color-g descenders">g</span></li>
+      	      <li><span class="letter-i color-i standard">i</span></li>
+      	      <li><span class="letter-z color-z standard">z</span></li>
+      	      <li><span class="letter-z color-z standard">z</span></li>
+      	      <li><span class="letter-a color-a standard">a</span></li>
+    	        <li><span class="letter-r color-r standard">r</span></li>
+      	      <li><span class="letter-d color-d ascenders">d</span></li>
+    	      </ol>
+          </div>
+          <div>
+            <ol id="grid"></ol>
+          </div>
+    	    <footer>
+    	       <button id="next" class="btn">next</button>
+    	    </footer>
+	      </section>
+
+        <section id="solve">
+	      </section>
+
+	    </div>
+	    <footer></footer>
+
+	    <aside class="blanket active">
+	       <button id="fetch" class="btn">fetch</button>
+	    </aside>
+	  </div>
+
+  	<script src="../../__jquery/jquery-1.9.1/jquery-1.9.1.min.js"></script>
+
+  	<script src="data/nines.js"></script>
+
+  	<script src="scripts/build.js"></script>
+  	<script src="scripts/events.js"></script>
+  	<script src="scripts/scripts.js"></script>
+  	<script>
+  	  document.getElementById("next").onclick = function(event) {
+  	    document.location.reload();
+  	  }
+  	</script>
+	</body>
+</html>

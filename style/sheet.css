@@ -1,0 +1,70 @@
+body{
+	background-color: whitesmoke;
+	color: black;
+	font-family: 'Oxygen Mono', sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.blanket {
+	background-color: rgba(0, 0, 0, .6);
+	bottom: 0;
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.blanket.active {
+	display: block;
+}
+
+#main {
+	background-color: white;
+	margin: .5rem auto;
+	overflow: scroll;
+	width: 20rem;
+}
+
+#main > div > section {
+	display: none;
+	height: 30rem;
+	max-height: 30rem;
+	max-width: 20rem;
+	position: relative;
+} 
+
+#section-create #create {
+	display: block;
+}
+
+#create footer {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+#fetch {
+	border-radius: 100%;
+	display: inherit;
+	height: 5rem;
+	margin: 17rem auto 0;
+	width: 5rem;
+}
+
+
+
+

@@ -1,0 +1,115 @@
+#grid {
+	margin: 0 auto;
+	width: 16rem;
+}
+
+#grid li {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2rem;
+	height: 4rem;
+	line-height: 4rem;
+	position: relative;
+	text-align: center;
+	width: 4rem;
+	z-index: 1;
+}
+
+#grid li:after {
+	border-top: 1px solid rgb(236, 236, 236);
+	content: "";
+	left: -1rem;
+	position: absolute;
+	right: 0;
+	top: 2.7rem;
+	width: 7rem;
+	z-index: -100;
+}
+
+#grid li:nth-child(4n-3):after {
+	left: -4rem;
+}
+
+#grid span {
+	color: white;
+	display: block;
+	position: relative;
+}
+
+#grid span::before {
+	content: "a";
+	left: .9rem;
+	line-height: 1;
+	padding: 0 .5rem;
+	position: absolute;
+	text-align: center;
+	top: 1rem;
+	z-index: -1;
+}
+
+#grid .ascenders::before {
+	padding-top: .7rem;
+	top: .3rem;	
+}
+
+#grid .descenders::before {
+	padding-bottom: .7rem;
+}
+
+#grid li:hover span {
+
+}
+
+
+#solution {
+	height: 4rem;
+	margin: 4rem auto;
+	text-align: center;
+	width: 17.8rem;
+}
+
+#solution::after {
+	border-top: 1px solid rgb(192, 192, 192);
+	content: "";
+	left: 0;
+	position: absolute;
+	top: 2.7rem;
+	width: 20rem;
+}
+
+#solution li {
+	display: inline-block;
+	font-size: 2rem;
+	height: 4rem;
+	line-height: 4rem;
+	position: relative;
+	text-align: center;
+	width: 1.8rem;
+	z-index: 1;
+}
+
+#solution span {
+	color: white;
+	display: block;
+	position: relative;
+}
+
+#solution span::before {
+	content: "a";
+	left: -.2rem;
+	line-height: 1;
+	padding: 0 .5rem;
+	position: absolute;
+	text-align: center;
+	top: 1rem;
+	z-index: -1;
+}
+
+#solution .ascenders::before {
+	padding-top: .7rem;
+	top: .3rem;	
+}
+
+#solution .descenders::before {
+	padding-bottom: .7rem;
+}
