@@ -13,6 +13,11 @@ var EVENTS = {
 
 			BUILD.grapheme();
 		});
+
+		$('#grid').on('click', 'span', function(){
+			BSLN.play($(this).attr("class"));
+		});
+
 	},
 	fetch: function() {
 		BSLN.WORD = nines[this.random(nines.length - 1)].toLowerCase();
