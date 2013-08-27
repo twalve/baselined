@@ -70,20 +70,12 @@ var BUILD = {
 		document.getElementsByTagName("head")[0].appendChild(sheet);
 	},
 	create: function(letter) {
-		var lettername;
-		var classname;
-		var colorname;
-		var $item;
-		var $span;
+		var lettername = "letter-" + letter;
+		var colorname = "color-" + letter;
+		var classname = [lettername, colorname, BUILD.lettercase(letter)].join(" ");
+		var $span = $("<span>").html(letter).addClass(classname);
 
-		lettername = "letter-" + letter;
-		colorname = "color-" + letter;
-		classname = [lettername, colorname, BUILD.lettercase(letter)].join(" ");
-
-		$span = $("<span>").html(letter).addClass(classname);
-		$item = $("<li>").append($span);
-
-		return $item;
+		return $("<li>").append($span);
 	},
 	fill: function() {
 		var that = this;
@@ -91,16 +83,13 @@ var BUILD = {
 		var $shadow = $('<ul>');
 		var length = this.options.tiles;
 		var i = 0;
-		var letter;
+
+		for (; i < length; i += 1) {
+			$shadow.append(this.create(BSLN.LETTERS[i]));
+		}
 
 		console.log(BSLN.WORD)
 		console.log(BSLN.LETTERS)
-
-		for (; i < length; i += 1) {
-			letter = BSLN.LETTERS[i];
-
-			$shadow.append(this.create(letter));
-		}
 
 		$list.html($shadow.html());
 	},
