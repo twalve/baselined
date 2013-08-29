@@ -1,4 +1,5 @@
 var BUILD = {
+	extras: 0,
 	chances: [12, 6, 3, 2, 1, 1, 1],// 80, 75, 66, 50, 40, 33, 25, 20, 
 	characters: {
 		option: ["ascenders", "descenders", "others", "vowels"],
@@ -40,13 +41,12 @@ var BUILD = {
 		var letter;
 		var style = "";
 
-		var array = function() {
+		var fold = function() {
 			var start = EVENTS.random(length);
 			var before = colors.slice(0, start);
 			var after = colors.slice(start);
-			var array = after.concat(before);
 
-			return array;
+			return after.concat(before);
 		};
 
 		var styles = function(letter) {
@@ -57,9 +57,10 @@ var BUILD = {
 			return [".color-", letter, "::before {background-color:", color, ";color:", color, ";}\n"].join("");
 		};
 
-		this.colors.ascenders = array();
-		this.colors.descenders = array();
-		this.colors.standard = array();
+		// start the colours from different places in the array
+		this.colors.ascenders = fold();
+		this.colors.descenders = fold();
+		this.colors.standard = fold();
 
 		for (letter in letters) {
 			style += styles(letters[letter]);
@@ -97,21 +98,45 @@ var BUILD = {
 		return (this.strings["ascenders"].toString().indexOf(character) !== -1 ) ? "ascenders" : 
 		(this.strings["descenders"].toString().indexOf(character) !== -1 ) ? "descenders" : "standard";
 	},
-	grapheme: function() {
+	double: function(letter) {
 		var word = BSLN.WORD;
-		var letters = word.split("");
-		var extras = 7; //7 + 9 = 16
+
+		if (word.lastIndexOf(letter) !== word.indexOf(letter)) {
+			console.log("There are more than one " + letter)
+		}
+	},
+	grapheme: function() {
+		var letters = BSLN.WORD.split("");
 		var chars = [];
 		var options = this.characters.option.length - 1;
-		var chance;
 		var which;
 		var array;
 		var length;
+		var letter;
+		var extras;
+
+		for (letter in letters) {
+			this.double(letters[letter]);
+		}
+
+		extras = this.extras;
 
 		while (extras) {
-			chance = this.chances[7 - extras];
 
-			if (EVENTS.random(100) < chance) {
+
+			// if () {// ascender
+			// 	
+			// }
+			// else if () {//descender
+			// 	
+			// }
+
+			// if (extras) {// holding
+			// 	
+			// }
+			// else 
+			
+			if (EVENTS.random(100) < this.chances[7 - extras]) {
 				chars.push(letters[extras]);
 			}
 			else {
@@ -135,7 +160,7 @@ var BUILD = {
 		BSLN.LETTERS = letters.concat(chars);
 		BSLN.LETTERS.sort(shuffle);
 		BSLN.LETTERS.sort(shuffle);
-		
+
 		this.fill();
 	},
 	search: function() {
@@ -157,7 +182,9 @@ var BUILD = {
 	view: function() {
 		$(document.body).attr("id", "section-" + this.options.view)
 	},
-	init: function() {
+	init: function() {		
+		this.extras = 7; //7 + 9 = 16
+
 		this.colorize();
 		this.search();
 		this.view();
