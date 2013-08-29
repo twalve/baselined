@@ -14,6 +14,10 @@ var BUILD = {
 		descenders: ["gjpqy"],
 		standard: ["aceimnorsuvwxz"]
 	},
+	types: {
+		ascenders: {},
+		descenders: {},
+	},
 	colors: {
 		optionsafe: [
 			"#FF0000", "#CC0099", "#990099", "#660099", 
@@ -98,6 +102,20 @@ var BUILD = {
 		return (this.strings["ascenders"].toString().indexOf(character) !== -1 ) ? "ascenders" : 
 		(this.strings["descenders"].toString().indexOf(character) !== -1 ) ? "descenders" : "standard";
 	},
+	uniquecase: function(letter) {
+		var word = BSLN.WORD;
+
+		return word.lastIndexOf(letter) === word.indexOf(letter);
+	},
+	multicase: function() {
+
+		// for () {
+		// 	
+		// }
+	},
+
+
+
 	double: function(letter) {
 		var word = BSLN.WORD;
 
@@ -105,6 +123,9 @@ var BUILD = {
 			console.log("There are more than one " + letter)
 		}
 	},
+
+
+
 	grapheme: function() {
 		var letters = BSLN.WORD.split("");
 		var chars = [];
@@ -122,6 +143,13 @@ var BUILD = {
 		extras = this.extras;
 
 		while (extras) {
+
+			if (this.lettercase(letter) !== "standard") {
+				
+			}
+			else {
+				
+			}
 
 
 			// if () {// ascender
