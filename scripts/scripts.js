@@ -5,7 +5,7 @@ var BSLN = {
 	play: function(className) {
 		var letter = className.split(" ")[0].split("-")[1];
 
-		$('#solution').prepend(BUILD.create(letter));
+		$('#cursor').before(BUILD.create(letter));
 	},
 	remove: function(target) {
 		$(target).remove();

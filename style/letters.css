@@ -64,6 +64,7 @@
 #solution {
 	height: 4rem;
 	margin: 4rem auto;
+	overflow: hidden;
 	text-align: center;
 	width: 17.8rem;
 }

@@ -45,7 +45,7 @@ a {
 	-webkit-animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
 	-moz-animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
 	animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
-	border-bottom: 1px solid #C0C0C0;
+	border-bottom: 4px solid #C0C0C0;
 	display: inline-block;
 	top: -.9rem;
 }
