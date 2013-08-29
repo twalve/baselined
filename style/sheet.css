@@ -31,6 +31,25 @@ a {
 	display: block;
 }
 
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+@-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+.blink {
+	-webkit-animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
+	-moz-animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
+	animation: blinker 1s cubic-bezier(1.0,0,0,1.0) infinite;  
+	border-bottom: 1px solid #C0C0C0;
+	display: inline-block;
+	top: -.9rem;
+}
+
 #main {
 	background-color: white;
 	margin: .5rem auto;
