@@ -18,6 +18,9 @@ var EVENTS = {
 			BSLN.play($(this).attr("class"));
 		});
 
+		$('#solution').on('click', 'span', function(){
+			BSLN.remove($(this).closest("li"));
+		});
 	},
 	fetch: function() {
 		BSLN.WORD = nines[this.random(nines.length - 1)].toLowerCase();
