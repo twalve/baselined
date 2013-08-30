@@ -36,7 +36,7 @@ var BSLN = {
 		BUILD.init();
 		EVENTS.init();
 
-		$('#fetch').click();
+		// $('#fetch').click();
 	}
 }
 
