@@ -25,6 +25,7 @@ a {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 999;
 }
 
 .blanket.active {
@@ -58,6 +59,7 @@ a {
 	background-color: white;
 	margin: .5rem auto;
 	overflow: scroll;
+	position: relative;
 	width: 20rem;
 }
 
@@ -80,12 +82,22 @@ a {
 	width: 100%;
 }
 
+#create footer button {
+	margin: .5rem;
+}
+
+#play {
+	float: right;
+}
+
 #fetch {
 	border-radius: 100%;
 	display: inherit;
-	height: 5rem;
+	font-family: 'Oxygen Mono', sans-serif;
+	font-size: 1.4rem;
+	height: 6rem;
 	margin: 17rem auto 0;
-	width: 5rem;
+	width: 6rem;
 }
 
 
