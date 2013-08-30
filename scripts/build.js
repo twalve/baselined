@@ -74,10 +74,18 @@ var BUILD = {
 		sheet.innerHTML = style;
 		document.getElementsByTagName("head")[0].appendChild(sheet);
 	},
-	create: function(letter) {
+	create: function(letter, index) {
 		var lettername = "letter-" + letter;
 		var colorname = "color-" + letter;
-		var classname = [lettername, colorname, BUILD.lettercase(letter)].join(" ");
+		var classname;
+
+		if (typeof index === "number") {
+			classname = [lettername, colorname, BUILD.lettercase(letter), "grid-" + index].join(" ");
+		}
+		else {
+			classname = [lettername, colorname, BUILD.lettercase(letter), "racked"].join(" ");
+		}
+
 		var $span = $("<span>").html(letter).addClass(classname);
 
 		return $("<li>").append($span);
@@ -93,7 +101,7 @@ var BUILD = {
 			$shadow.append(this.create(BSLN.LETTERS[i]));
 		}
 
-		console.log(BSLN.WORD)
+		console.log(BSLN.NINE)
 		console.log(BSLN.LETTERS)
 
 		$list.html($shadow.html());
@@ -103,7 +111,7 @@ var BUILD = {
 		(this.strings["descenders"].toString().indexOf(character) !== -1 ) ? "descenders" : "standard";
 	},
 	uniquecase: function(letter) {
-		var word = BSLN.WORD;
+		var word = BSLN.NINE;
 
 		return word.lastIndexOf(letter) === word.indexOf(letter);
 	},
@@ -117,7 +125,7 @@ var BUILD = {
 
 
 	double: function(letter) {
-		var word = BSLN.WORD;
+		var word = BSLN.NINE;
 
 		if (word.lastIndexOf(letter) !== word.indexOf(letter)) {
 			console.log("There are more than one " + letter)
@@ -127,7 +135,7 @@ var BUILD = {
 
 
 	grapheme: function() {
-		var letters = BSLN.WORD.split("");
+		var letters = BSLN.NINE.split("");
 		var chars = [];
 		var options = this.characters.option.length - 1;
 		var which;
