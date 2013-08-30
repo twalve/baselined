@@ -21,7 +21,7 @@ var EVENTS = {
 			if (BSLN.PLAYED.length < BSLN.SLOTS) {
 				BSLN.play($this.attr("class"), index);
 
-				$this.closest("li").css("opacity", .1);
+				$this.removeClass("racked").closest("li").addClass("played");
 			}
 			else {
 				alert("You can only play " + BSLN.SLOTS + " letters");
@@ -29,7 +29,9 @@ var EVENTS = {
 		});
 
 		$('#solution').on('click', 'span', function(){
-			BSLN.remove($(this).closest("li"));
+			var $this = $(this);
+
+			if (!$this.hasClass("blink")) BSLN.remove($this.closest("li"));
 		});
 	},
 	fetch: function() {
