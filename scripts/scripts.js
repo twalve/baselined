@@ -36,8 +36,10 @@ var BSLN = {
 		BUILD.init();
 		EVENTS.init();
 
+		
 		// $('#fetch').click();
 	}
 }
 
 BSLN.init();
+FastClick.attach(document.body);
