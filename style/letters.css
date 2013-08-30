@@ -86,7 +86,7 @@
 	line-height: 4rem;
 	position: relative;
 	text-align: center;
-	width: 1.8rem;
+	width: 2.5rem;
 	z-index: 1;
 }
 
@@ -98,7 +98,7 @@
 
 #solution span::before {
 	content: "a";
-	left: -.2rem;
+	left: .2rem;
 	line-height: 1;
 	padding: 0 .5rem;
 	position: absolute;
